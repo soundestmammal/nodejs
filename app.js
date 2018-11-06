@@ -2,24 +2,27 @@ console.log("Starting the App!");
 
 const fs = require('fs');
 const _ = require('lodash');
+const yargs = require('yargs');
 
 const notes = require('./notes');
-
-const command = process.argv[2];
-console.log(process.argv);
+const command = argv._[0];
+const argv = yargs.argv;
+console.log('Yargs', argv);
 
 if (command === 'add') {
-    console.log('Adding new note');
-}
-else if (command === 'remove'){
-    console.log('Remove the note');
-}
-else if (command === 'read'){
-    console.log('Fetching all notes');
+    notes.addNote(argv.title, argv.body);
 }
 else if (command === 'list'){
-    console.log('Listing all notes');
+    notes.getAll()
+}
+else if (command === 'read'){
+    notes.getNote();
+}
+else if (command === 'remove'){
+    notes.removeNote(argv.title);
 }
 else {
     console.log('command not recognized.');
 }
+
+
