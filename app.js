@@ -5,8 +5,10 @@ const _ = require('lodash');
 const yargs = require('yargs');
 
 const notes = require('./notes');
-const command = argv._[0];
+
 const argv = yargs.argv;
+const command = argv._[0];
+console.log('Command: ' command);
 console.log('Yargs', argv);
 
 if (command === 'add') {
