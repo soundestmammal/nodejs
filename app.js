@@ -12,7 +12,16 @@ console.log('Command: ', command);
 console.log('Yargs', argv);
 
 if (command === 'add') {
-    notes.addNote(argv.title, argv.body);
+    var note = notes.addNote(argv.title, argv.body);
+    if (note) {
+        console.log(`You successfully added note with Title: ${note.title} and Body: ${note.body}.`)
+    }
+    else {
+        console.log("Woops. That didn't work. Try a different title");
+    }
+    // If note exists print out the note title and the note body
+
+    // If the note does not exist, or undefined, print that the note title already in use.
 }
 else if (command === 'list'){
     notes.getAll()

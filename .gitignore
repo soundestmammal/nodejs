@@ -4,3 +4,5 @@ node_modules/
 package\.json
 
 package-lock\.json
+
+notes-data\.json

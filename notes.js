@@ -2,20 +2,28 @@ console.log('Starting the notes app');
 
 const fs = require('fs');
 
+// Reusable function to fetch the notes titles
 const fetchNotes = () => {
-    
     try {
+        // Try to read file n-d.json, and assign it to variable
         const notesString = fs.readFileSync('notes-data.json')
-        notes = JSON.parse(notesString);
+        // If variable assignment successful, then return the parsed JSON    
+        return JSON.parse(notesString);
+    // if there is nothing to read, then goes to catch case.
     } catch (e) {
-
+        return [];
     }
 }
-const saveNotes () => {
+// Write the note to the json file,
+const saveNotes = (notes) => {
+    fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 
-}
+};
 addNote = (title, body) => {
-    let notes = [];
+    // Assign the notes from json to the notes variable
+    // If no notes, then create an array to store the notes
+    let notes = fetchNotes();
+    // This is the structure of one of our notes
     const note = {
         title,
         body
@@ -23,12 +31,11 @@ addNote = (title, body) => {
     // Create a variable for duplicate notes
     // Use filter method to 
     let duplicateNotes = notes.filter((note) => note.title === title )    
-    if (duplicateNotes.length === 0){
+    if (duplicateNotes.length === 0) {
         notes.push(note);
-        fs.writeFileSync('notes-data.json', JSON.stringify(notes));
-        console.log('Choose a Different Title.');
+        saveNotes(notes);
+        return note;
     }
-    
 }
 
 getAll = () => {
