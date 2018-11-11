@@ -27,10 +27,25 @@ else if (command === 'list'){
     notes.getAll()
 }
 else if (command === 'read'){
-    notes.getNote();
+    let read = notes.getNote(argv.title);
+    if (read) {
+        console.log(`Title: ${read.title} \nBody: ${read.body}`);
+    } else {
+        console.log("Could not locate that note");
+    }
+    // It will return the note object
+
+
+    // If not found then it will 
 }
 else if (command === 'remove'){
     notes.removeNote(argv.title);
+    console.log(notes.removeNote.prototype.filteredNotes)
+    // if (filteredNotes.length === notes.length) {
+    //     console.log('You removed that thing')
+    // } else {
+    //     console.log('Note not found');
+    // }
 }
 else {
     console.log('command not recognized.');

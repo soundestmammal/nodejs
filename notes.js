@@ -30,26 +30,45 @@ addNote = (title, body) => {
     };
     // Create a variable for duplicate notes
     // Use filter method to 
-    let duplicateNotes = notes.filter((note) => note.title === title )    
-    if (duplicateNotes.length === 0) {
-        notes.push(note);
-        saveNotes(notes);
-        return note;
-    }
+    
 }
 
 getAll = () => {
     console.log('Getting all of the notes!');
+    let notes = fetchNotes();
+    if (notes.length === 0){
+        console.log("There are no notes currently saved");
+    } else {
+        for (let i = 0; i < notes.length; i++) {
+            let t = notes[i].title;
+            let b = notes[i].body;
+            console.log(`Title: ${t}`);
+            console.log(`Body: ${b}\n`);
+            
+        }     
+    }
+};
+
+getNote = (title) => {
+    let notes = fetchNotes();
+    let duplicateNotes = notes.filter((note) => note.title === title )    
+    if (duplicateNotes.length === 0) {
+        return false;
+    } else {
+        let locatedNote = duplicateNotes[0];
+        return locatedNote;
+    }
 }
 
-getNote = () => {
-    console.log('This is to read the note!!!');
+removeNote = (test) => {
+    // Insert array of notes
+    let notes = fetchNotes();
+    // What do i need title for:
+    // Title - to locate the notes.note.title === title ^^^
+    let filteredNotes = notes.filter((note) => note.title != test );
+    saveNotes(notes);
+    console.log('Your note has been removed')
 }
-
-removeNote = (title) => {
-    console.log('Removed the note');
-}
-
 module.exports = {
     addNote,
     getAll,
