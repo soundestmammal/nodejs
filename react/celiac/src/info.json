@@ -1,0 +1,16 @@
+{
+    "Chipotle": {
+        "pic": "picture here",
+        "up": 1,
+        "down": 1,
+        "comments": 
+            {
+                "num1": {
+                    "author": "Robert",
+                    "message": "Chipotle is good, just don't get burrito!",
+                    "timeStamp": "November 15th"
+                }
+            }
+
+    }
+}
