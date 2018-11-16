@@ -16,19 +16,32 @@ import chipotle from '../chipotle.svg';
 //         color: 'red'
 //     }
 // }
-
+const submit = (first, last, message) => {
+        this.state.comment = {
+            firstName: first,
+            lastName: last,
+            comment: message
+        }
+}
 class Widget extends Component {
     constructor(props) {
         super(props);
         this.state = {
             pic: chipotle,
             time: new Date(),
+            response: 0,
+            comment: {
+                firstName: null,
+                lastName: null,
+                message: null
+            }
         };
     }
+    
     render() {
         return(
         <div style={{height: '100vh', width: '100vw'}}>
-            <div style={{display: 'flex', flexDirection:'column', alignItems: 'center'}}>
+            <div style={{backgroundColor: 'grey',display: 'flex', flexDirection:'column', alignItems: 'center'}}>
                 <div className="ui header">Gluten Radar</div>
                 <div>
                     <img src={chipotle} alt="chipotle picture" />
@@ -40,11 +53,12 @@ class Widget extends Component {
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <h2>Add a comment</h2>
                     <div style={{paddingBottom: '2em'}}>
-                        <input placeholder="First Name"></input>
-                        <input placeholder="Last Name"></input>
+                        <input  placeholder="First Name"></input>
+                        <input  placeholder="Last Name"></input>
                     </div>
                     
                     <input placeholder="What did you think?"></input>
+                    <span className="ui secondary basic button" style={{backgroundColor: "white"}}>Submit Comment</span>
                 </div>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <h3>Score</h3>
