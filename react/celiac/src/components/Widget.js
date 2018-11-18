@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import chipotle from '../chipotle.svg';
+import { addComment } from '../actions/';
+
 // const styles = {
 //     container: {
 //         display: 'flex',
@@ -23,21 +26,26 @@ const submit = (first, last, message) => {
             comment: message
         }
 }
+
 class Widget extends Component {
     constructor(props) {
         super(props);
         this.state = {
             pic: chipotle,
-            time: new Date(),
-            response: 0,
+            chatter: [],
             comment: {
-                firstName: null,
-                lastName: null,
-                message: null
+                firstName: '',
+                lastName: '',
+                message: ''
             }
         };
     }
-    
+    addComment() {
+        // let message = this.state.comment.message;
+        // this.props.addComment(message);
+        this.setState((state) => ({message: text}))
+    }
+
     render() {
         return(
         <div style={{height: '100vh', width: '100vw'}}>
@@ -58,7 +66,9 @@ class Widget extends Component {
                     </div>
                     
                     <input placeholder="What did you think?"></input>
-                    <span className="ui secondary basic button" style={{backgroundColor: "white"}}>Submit Comment</span>
+                    <button className="ui secondary basic button" 
+                    onClick={this.addComment}
+                    >Submit Comment</button>
                 </div>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <h3>Score</h3>
@@ -66,8 +76,8 @@ class Widget extends Component {
                 </div>
                 <div>
                     <h1>Comments</h1>
-                    <p>This place is good.</p>
-                    <p>Author: Robert Checco</p>
+                    <p>{this.state.comment.message}</p>
+                    <p>{this.state.comment.firstName}</p>
                 </div>
 
             </div> 
@@ -76,4 +86,11 @@ class Widget extends Component {
     }
 }
 
-export default Widget;
+const mapStateToProps = (state) => {
+    const { message } = state.comments;
+    return {
+        message
+    };
+};
+
+export default connect(mapStateToProps, { addComment })(Widget);
