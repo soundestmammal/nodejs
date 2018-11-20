@@ -1,6 +1,13 @@
 const passport = require('passport');
+// The google strategy is lets passport which
+//strategy it should use to attempt to get
+// user information.
+// This is because different companies have different
+// procedures for communicating with passport.
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+//mongoose is a javascript library that helps us communicate with mongodb
 const mongoose = require('mongoose');
+// It is good for us to keep keys in a sep. file and gitignore
 const keys = require('../config/keys');
 
 const User = mongoose.model('users');
