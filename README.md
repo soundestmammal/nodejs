@@ -1,21 +1,21 @@
---------------------------------------
+
 # Table of Contents:
-# --------------------------------------
-## 1. Things I do in Javascript
-## 2. React.js
-## 3. Node.js
-## 4. Express Project
-## 5. Celiac Project
-## 6. React Project
-## 7. Server Project
-## 8. Weather App Project
+
+* 1. Things I do in Javascript
+* 2. React.js
+* 3. Node.js
+* 4. Express Project
+* 5. Celiac Project
+* 6. React Project
+* 7. Server Project
+* 8. Weather App Project
 --------------------------------------
 
 
 
 
 ______________________________________
-1. Things I do in Javascript:
+## Things I do in Javascript:
 
 
 
@@ -32,29 +32,11 @@ ______________________________________
 
 
 ______________________________________
-2. React.js:
+## React.js:
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-______________________________________
-3. Node.js
 
 
 
@@ -72,7 +54,7 @@ ______________________________________
 
 
 ______________________________________
-4. Express Project
+## Node.js
 
 
 
@@ -90,7 +72,7 @@ ______________________________________
 
 
 ______________________________________
-5. Celiac Project
+## Express Project
 
 
 
@@ -108,24 +90,8 @@ ______________________________________
 
 
 ______________________________________
-6. React Project
+## Celiac Project
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-______________________________________
-7. Server Project
 
 
 
@@ -142,7 +108,41 @@ ______________________________________
 
 
 ______________________________________
-8. Weather App Project
+## React Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________
+## Server Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________
+## Weather App Project
 
 
 
