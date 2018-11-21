@@ -1,9 +1,9 @@
 
 # Table of Contents:
 
-** Things I do in Javascript **
-** React.js **
-** Node.js **
+* [Things I do in Javascript]
+*  [React.js] (#react)
+* Node.js
 * Express Project
 * Celiac Project
 * React Project
@@ -12,7 +12,7 @@
 
 ## Things I do in Javascript:
 
-## React.js:
+## [React.js:](./docs/react.md)
 
 ## Node.js
 
