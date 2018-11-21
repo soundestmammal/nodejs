@@ -12,7 +12,7 @@
 
 ## Things I do in Javascript:
 
-## [React.js:](./docs/react.md)
+## [React.js:](./react.md)
 
 ## Node.js
 
