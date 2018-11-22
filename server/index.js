@@ -7,7 +7,6 @@ require("./models/User");
 require("./models/Survey");
 require("./services/passport");
 
-
 mongoose.connect(keys.mongoURI);
 
 const app = express();
@@ -18,12 +17,13 @@ app.use(
         keys: [keys.cookieKey]
     })
 );
+
 app.use(passport.initialize());
+
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 // require('./routes/surveyRoutes')(app);
 
-// This port should not be changed
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
