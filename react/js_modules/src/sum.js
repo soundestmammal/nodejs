@@ -3,3 +3,6 @@ const sum = (a,b) => a + b;
 // Commonjs
 // AMD
 // ES2015
+
+// Use common js
+module.exports = sum;
