@@ -2,12 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './reducers/index.js';
+
+import reducers from './reducers/';
 import App from './components/App';
 
 // We pass our reducers to the Create Store function
 // This returns a store object
-const store = createStore(rootReducer);
+const store = createStore(reducers);
 
 // Within the ReactDOM render method
 // We pass the store object to the react-redux provider component

@@ -5,8 +5,15 @@ export const addComment = (text) => {
     }
 }
 
-export const getComments = () => {
+export const fetchComments = () => {
     return {
-        type: 'GET_COMMENTS'
+        type: 'FETCH_COMMENTS'
+    }
+}
+
+
+export const fetchRestaurants = () => {
+    return {
+        type: 'FETCH_RESTAURANTS'
     }
 }
