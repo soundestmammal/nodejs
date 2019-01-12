@@ -19,3 +19,12 @@ var primaryColors = [
 primaryColors.reduce((prev, primaryColor) => {
     return prev.push(primaryColor.color);
 }, [])
+
+
+//How to solve balanced parameters question?
+
+// I am thinking about this and it sounds resonable to...
+
+// keep track of count of open and close
+// check to see if one is open if the next one is closed
+// if one closes before another opens than it is unbalanced

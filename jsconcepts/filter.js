@@ -47,3 +47,14 @@ const commentsForPost = (post, comments) => {
 }
 
 console.log(commentsForPost(post, comments))
+
+var geographicInformation = [
+    {state: "New York", region: "Northeast"},
+    {state: "Florida", region: "Southeast"},
+    {state: "Washington", region: "Northwest"},
+    {state: "Arizona", region: "Southwest"}
+];
+
+geographicInformation.filter((each)=>{
+    return each.region === "Southeast";
+});
