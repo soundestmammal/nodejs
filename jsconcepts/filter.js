@@ -50,11 +50,15 @@ console.log(commentsForPost(post, comments))
 
 var geographicInformation = [
     {state: "New York", region: "Northeast"},
+    {state: "Georgia", region: "Southeast"},
     {state: "Florida", region: "Southeast"},
     {state: "Washington", region: "Northwest"},
     {state: "Arizona", region: "Southwest"}
 ];
 
+// Works for Single entry or multiple entries.
+// Will return all elements that meet condition
 geographicInformation.filter((each)=>{
     return each.region === "Southeast";
 });
+
