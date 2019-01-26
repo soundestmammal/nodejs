@@ -1,9 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class SearchBar extends React.Component {
+    state = { term: 'default text up here'};
+
+    onInputChange = () => {
+
+    };
     render() {
-        return <div>Searchbar</div>
+        return (
+        <div className="search-bar ui segment">
+            <form className="ui form">
+                <div classname="field">
+                    <label>Video Search</label>
+                    <input
+                        type="text"
+                        value={this.state.term}
+                        onChange={this.onInputChange}/>
+                </div>
+            </form>
+        </div>)
     }
 }
 

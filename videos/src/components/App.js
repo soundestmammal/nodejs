@@ -5,8 +5,7 @@ import SearchBar from './SearchBar';
 class App extends React.Component {
     render() {
         return (
-        <div>
-            <h1> This is here</h1>
+        <div className="ui container">
             <SearchBar />
         </div>
         );
