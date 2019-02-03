@@ -7,7 +7,11 @@ class SearchBar extends Component {
         event.preventDefault();
         this.props.onSubmit(this.state.term);
     }
-
+    /*
+    Return a container that will contain a form.
+    The five has a div with the label input inside.
+    We want to react to the user typing
+    */
     render() {
         return (
                 <div className='ui segment'>
