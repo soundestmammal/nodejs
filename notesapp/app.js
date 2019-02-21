@@ -1,51 +1,59 @@
-console.log("Starting the App!");
-
 const fs = require('fs');
 const _ = require('lodash');
 const yargs = require('yargs');
 
-const notes = require('./notes');
-
-const argv = yargs.argv;
-const command = argv._[0];
-console.log('Command: ', command);
-console.log('Yargs', argv);
+const notes = require('./notes.js');
+const titleObj = {
+    describe: 'Title of the note',
+    demand: true,
+    alias: 't'
+};
+const bodyObj = {
+    describe: 'Body of the note',
+    demand: true,
+    alias: 'b'
+};
+const argv = yargs.command('add', 'Add a new note', {
+    title: titleObj,
+    body: bodyObj
+}).command('list', 'List of the notes')
+.command('read', 'Read a single note', {
+    title: titleObj
+})
+.command('remove', 'Removes the note by title', {
+    title: titleObj
+})
+    .help()
+    .argv;
+var command = argv._[0];
 
 if (command === 'add') {
     var note = notes.addNote(argv.title, argv.body);
     if (note) {
-        console.log(`You successfully added note with Title: ${note.title} and Body: ${note.body}.`)
+        console.log("Note created");
+        notes.logNote(note);
     }
     else {
         console.log("Woops. That didn't work. Try a different title");
     }
-    // If note exists print out the note title and the note body
-
-    // If the note does not exist, or undefined, print that the note title already in use.
 }
 else if (command === 'list'){
     notes.getAll()
 }
 else if (command === 'read'){
-    let read = notes.getNote(argv.title);
+    var read = notes.getNote(argv.title);
     if (read) {
-        console.log(`Title: ${read.title} \nBody: ${read.body}`);
+        console.log("Note found!"); 
+        notes.logNote(read);
     } else {
         console.log("Could not locate that note");
     }
-    // It will return the note object
 
-
-    // If not found then it will 
 }
 else if (command === 'remove'){
-    notes.removeNote(argv.title);
-    console.log(notes.removeNote.prototype.filteredNotes)
-    // if (filteredNotes.length === notes.length) {
-    //     console.log('You removed that thing')
-    // } else {
-    //     console.log('Note not found');
-    // }
+    var noteRemoved = notes.removeNote(argv.title);
+    var message = noteRemoved ? `You removed the item with title: ${argv.title}` : "No note found";
+    console.log("This is the remove output ", message);
 }
 else {
     console.log('command not recognized.');
